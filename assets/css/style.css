@@ -1,0 +1,262 @@
+/* =========================================
+   Swiggy - main stylesheet
+   Orange and white theme inspired by Swiggy
+   ========================================= */
+
+:root {
+    --orange: #fc8019;        /* Swiggy-like orange */
+    --orange-dark: #e46c0a;
+    --light-grey: #f5f6f8;
+    --text-dark: #282c3f;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-dark);
+    background: #fff;
+}
+
+/* ---------- Common buttons ---------- */
+.btn-orange {
+    background: var(--orange);
+    color: #fff;
+    border: none;
+    font-weight: 500;
+}
+.btn-orange:hover,
+.btn-orange:focus {
+    background: var(--orange-dark);
+    color: #fff;
+}
+.btn-outline-orange {
+    border: 1px solid var(--orange);
+    color: var(--orange);
+    font-weight: 500;
+}
+.btn-outline-orange:hover {
+    background: var(--orange);
+    color: #fff;
+}
+.text-orange { color: var(--orange) !important; }
+.bg-light-grey { background: var(--light-grey); }
+
+/* ---------- Navbar ---------- */
+.logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--orange) !important;
+}
+.logo span { color: var(--text-dark); }
+.site-footer .logo span { color: #fff; }
+.navbar .nav-link {
+    font-weight: 500;
+    color: var(--text-dark);
+}
+.navbar .nav-link:hover,
+.navbar .nav-link.active { color: var(--orange); }
+
+/* ---------- Hero ---------- */
+.hero {
+    background: linear-gradient(120deg, #fc8019 0%, #ff9f4a 100%);
+    color: #fff;
+    padding: 70px 0 80px;
+    position: relative;
+    overflow: hidden;
+}
+.hero h1 {
+    font-weight: 700;
+    font-size: 2.8rem;
+}
+.hero .hero-img {
+    width: 100%;
+    max-width: 420px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 8px solid rgba(255, 255, 255, 0.35);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+.search-box {
+    background: #fff;
+    border-radius: 50px;
+    padding: 6px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+.search-box input {
+    border: none;
+    border-radius: 50px;
+    padding-left: 20px;
+}
+.search-box input:focus { box-shadow: none; }
+.search-box .btn { border-radius: 50px; padding: 8px 28px; white-space: nowrap; }
+
+/* ---------- Section titles ---------- */
+.section-title {
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+.section-title span { color: var(--orange); }
+
+/* ---------- Categories ---------- */
+.category-item {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: var(--text-dark);
+    transition: transform 0.2s;
+}
+.category-item img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    margin-bottom: 10px;
+}
+.category-item:hover { transform: translateY(-6px); color: var(--orange); }
+
+/* ---------- Cards ---------- */
+.restaurant-card,
+.food-card {
+    border: none;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.restaurant-card:hover,
+.food-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+.restaurant-card .card-img-top { height: 190px; object-fit: cover; }
+.food-card .card-img-top { height: 160px; object-fit: cover; }
+
+.delivery-badge {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    font-size: 0.8rem;
+    padding: 3px 10px;
+    border-radius: 20px;
+}
+.rating {
+    background: #48c479;
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 6px;
+    white-space: nowrap;
+}
+.price { font-weight: 600; font-size: 1.05rem; }
+
+/* Veg / non-veg square icon like Indian food apps */
+.veg-icon {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border: 2px solid;
+    position: relative;
+    flex-shrink: 0;
+}
+.veg-icon::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+}
+.veg-icon.veg { border-color: #0f8a65; }
+.veg-icon.veg::after { background: #0f8a65; }
+.veg-icon.nonveg { border-color: #e43b4f; }
+.veg-icon.nonveg::after { background: #e43b4f; }
+
+/* ---------- Restaurant banner on menu page ---------- */
+.restaurant-banner {
+    background: var(--light-grey);
+    border-radius: 16px;
+    padding: 25px;
+}
+.restaurant-banner img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* ---------- Cart ---------- */
+.cart-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+.qty-box {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.qty-box button {
+    border: none;
+    background: #fff;
+    color: var(--orange);
+    font-weight: 700;
+    width: 34px;
+    height: 32px;
+}
+.qty-box button:hover { background: var(--light-grey); }
+.qty-box span { min-width: 32px; text-align: center; font-weight: 600; }
+
+.summary-card {
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+}
+
+/* ---------- Forms (login / register / checkout) ---------- */
+.auth-card {
+    max-width: 460px;
+    margin: 50px auto;
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+}
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--orange);
+    box-shadow: 0 0 0 0.2rem rgba(252, 128, 25, 0.2);
+}
+
+/* ---------- Order status badges ---------- */
+.status-Pending { background: #ffc107; color: #000; }
+.status-Confirmed { background: #0dcaf0; color: #000; }
+.status-Preparing { background: #6f42c1; color: #fff; }
+.status-Out { background: #fd7e14; color: #fff; }
+.status-Delivered { background: #198754; color: #fff; }
+.status-Cancelled { background: #dc3545; color: #fff; }
+
+/* ---------- Footer ---------- */
+.site-footer {
+    background: #171a29;
+    color: #b5b7c0;
+}
+.site-footer a {
+    color: #b5b7c0;
+    text-decoration: none;
+}
+.site-footer a:hover { color: var(--orange); }
+
+/* ---------- Mobile ---------- */
+@media (max-width: 767px) {
+    .hero { padding: 40px 0 50px; text-align: center; }
+    .hero h1 { font-size: 2rem; }
+    .category-item img { width: 80px; height: 80px; }
+}
